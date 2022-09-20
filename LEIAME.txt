@@ -1,0 +1,15 @@
+API
+ALUNO 
+ATIVIDADES
+Tarefas:
+0. Requisitos 
+0.1 Node
+0.2 Mysql
+0.3 Mysql Workbench
+Configurar projeto 
+1.1 npm int
+1.2 npm install
+Criar as toras - express
+GET, GET:id, POST , DELETE, PUT
+3. Persistência - Banco
+	SEQUELIZE - MYSQL 
