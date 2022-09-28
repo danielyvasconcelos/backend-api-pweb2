@@ -1,0 +1,6 @@
+NODE MODULES 
+    npm install express
+    sempre apagar o node modules , não é pra versionar o node modules pq é um arquivo grande !
+    é so da um npm install
+
+POSTMAN
