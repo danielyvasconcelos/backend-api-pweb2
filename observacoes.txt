@@ -2,5 +2,8 @@ NODE MODULES
     npm install express
     sempre apagar o node modules , não é pra versionar o node modules pq é um arquivo grande !
     é so da um npm install
+    --> sempre que for mexer no projeto teremos que baixar o node modules e dar um npm start 
 
 POSTMAN
+
+erro 404
