@@ -10,28 +10,38 @@ const router = express.Router();
 router.use(express.json()); //configurando para json
  //req = requisição, a que chega 
  // res = resposta, a que envia
-router.get('/', (req, res) =>{
-    res.send(` GET ALL `); 
+router.get('/', async(req, res) =>{
+    const alunos = await Aluno.findAll();
+    res.send(alunos); 
     
  });
 
-router.get('/:id', (req, res) =>{
-   res.send(` GET ID: ${req.params.id}`);
+router.get('/:id', async(req, res) =>{
+    const alunos = await Aluno.findByPk(req.params.id);
+   res.send(alunos);
 });
 
-router.get('/matricula/:matricula', (req, res) =>{
-res.send(`GET Matricula: ${req.params.matricula}`);
+router.get('/matricula/:matricula', async(req, res) =>{
+    //busca um objeto e da retorno
+   const alunos= await Aluno.findOne({ where:{
+        matricula:req.params.matricula 
+    }})
+    res.send(alunos);
 });
+// ! POST - SALVA
+router.post('/', (req, res) =>{
+    res.send(`POST: ${JSON.stringify(req.body)}`); // Json.stringify exibi melhor o resultado no postman
 
+
+});
  // ! PUT - ATUALIZA
 
  router.put('/:id', (req, res) =>{
-    res.send(`PUT ID: ${req.body}`);
-    });
-// ! POST - SALVA
-    router.post('/', (req, res) =>{
-        res.send(`POST: ${JSON.stringify(req.body)}`); // Json.stringify exibi melhor o resultado no postman
-        }); 
+    const alunos = Aluno.create(JSON.parse(req.body));
+    res.send(`PUT JSON.stringify(req.body)`);
+    
+});
+ 
 // ! DELETE - DELETA
         router.delete('/:id', (req, res) =>{
             res.send(`DELETE: ${req.params.id}`);

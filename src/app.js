@@ -11,8 +11,8 @@ res.send('bom dia'); // vai enviar os dados para a tela
 } ) //configurando uma rota, não é a melhor pratica*/
 
 
-app.listen(3000,async ()=> {
-    const resultDb = await database.sync({alter: true});
-    console.log(`db: ${resultDb}`);
+app.listen(3000, async ()=> {
+    //const resultDb = await database.sync();
+
     console.log('server started');
-})
+});
